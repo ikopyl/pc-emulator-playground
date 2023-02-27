@@ -1,7 +1,10 @@
 # Survey of the PC emulators
 
 - PCjs: https://www.pcjs.org/
-- PCE.js: https://github.com/jsdf/pce (port of PCE emulator to browser http://www.hampa.ch/pce/index.html)
+- PCE.js: https://github.com/jsdf/pce
+	- port of PCE emulator to browser: http://www.hampa.ch/pce/index.html
+	- npm package pcejs-ibmpc: https://www.npmjs.com/package/pcejs-ibmpc
+	- https://www.npmjs.com/package/pcejs-util
 
 
 ### Why port emulators to the browser?
