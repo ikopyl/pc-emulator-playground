@@ -1,0 +1,11 @@
+{
+  "name": "pc-emulator-playground",
+  "version": "1.0.0",
+  "description": "- PCjs: https://www.pcjs.org/ \t- https://github.com/jeffpar/pcjs - PCE.js: https://github.com/jsdf/pce \t- port of PCE emulator to browser: http://www.hampa.ch/pce/index.html \t- npm package pcejs-ibmpc: https://www.npmjs.com/package/pcejs-ibmpc \t- https://www.npmjs.com/package/pcejs-util",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ilya Kopyl",
+  "license": "ISC"
+}
