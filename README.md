@@ -18,3 +18,8 @@ https://jamesfriend.com.au/why-port-emulators-browser
 https://jamesfriend.com.au/porting-pce-emulator-browser
 
 
+## Running a Docker container:
+
+```
+docker run -p 8080:8080 <docker-image-id>
+```

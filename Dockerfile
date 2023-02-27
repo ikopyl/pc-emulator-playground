@@ -1,11 +1,10 @@
-# Check out https://hub.docker.com/_/node to select a new base image
 FROM node:16-slim
 
-# Set to a non-root built-in user `node`
-USER node
-
-# https://stackoverflow.com/a/71149283/2052750
-ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
+## Set to a non-root built-in user `node`
+#USER node
+#
+## https://stackoverflow.com/a/71149283/2052750
+#ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 
 
 # Create app directory (with user `node`)
@@ -18,11 +17,14 @@ WORKDIR /home/node/app
 # where available (npm@5+)
 COPY --chown=node index* ./
 COPY --chown=node package*.json ./
-COPY --chown=node ./ibmpc-system/* ./
+COPY --chown=node *.rom ./
+COPY --chown=node *.qed ./
+COPY --chown=node *.wasm ./
 
-RUN npm install --save pcejs-ibmpc pcejs-util && cp node_modules/pcejs-ibmpc/ibmpc-pcex.rom ./ibmpc-pcex.rom 
-RUN npm install --save browserify@4.x && npm install -g http-server
-# RUN browserify index.js --noparse="node_modules/pcejs-ibmpc/lib/pcejs-ibmpc.js" > bundle.js 
+RUN npm install --save pcejs-ibmpc pcejs-util
+COPY node_modules/pcejs-ibmpc/ibmpc-pcex.rom ./ibmpc-pcex.rom 
+RUN npm install -g browserify@4.x && npm install -g http-server
+RUN browserify index.js --noparse="node_modules/pcejs-ibmpc/lib/pcejs-ibmpc.js" > bundle.js 
 # RUN npm install http-server
 
 RUN npm install
